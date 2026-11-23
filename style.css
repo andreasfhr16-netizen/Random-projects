@@ -1,0 +1,53 @@
+:root {
+    --primary-bg-color: #e3dc89;
+
+}
+
+
+.page-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-bg-color);
+    width: 100vw;
+    height: 100vh;
+
+
+
+}
+
+
+.select-box {
+display:flex;
+width:30%;
+height:50%;
+border:2 solid black;
+flex-direction:column;
+
+
+}
+
+.select-box-header{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:10;
+    
+}
+
+.select-box-body{
+    display:flex;
+    justify-content: center;
+    align-items: start;
+    width:100%;
+    height:90%;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+}
