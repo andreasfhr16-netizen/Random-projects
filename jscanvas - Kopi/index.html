@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-con">
+
+        <div class="select-box">
+
+            <div class="select-box-header">
+                <p>Select a name from the dropdown:</p>
+            </div>
+
+            <div class="select-box-body">
+
+                <form id="name-form">
+                    <select id="name" name="name">
+                        <option value="jacob">Jacob</option>
+                        <option value="sarah">Sarah</option>
+                        <option value="fiona">Fiona</option>
+                        <option value="alex">Alex</option>
+
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+
+
+            </div>
+        </div>
+
+
+
+        <template id="my-template">
+
+            <div>
+                <h1>Hello, World!</h1>
+                <p>This is a template example.</p>
+            </div>
+        </template>
+
+        <div class="canvas-container">
+            <canvas id="mycanvas" width:="400" height:="400" style:="border:2px solid #000000"> </canvas>
+        </div>
+
+</body>
+<script>
+    function getname() {
+
+        //take the value of the selected name and log it into the console
+        let selectedName = document.getElementById('name').value;
+        console.log(selectedName);
+
+        return selectedName;
+    }
+
+    //select name from template dropdown
+    //the selected name gets written in a js canvas
+    //viewable by the user 
+
+
+    let form = document.getElementById("name-form");
+    form.addEventListener("submit", function (event) {
+        getname();
+        event.preventDefault();
+        let selectedName = getname();
+
+        const canvas = document.getElementById("mycanvas");
+        let canvas_context = canvas.getContext("2d");
+
+        //clears the canvas before writing the new name
+        canvas_context.clearRect(0, 0, canvas.width, canvas.height);
+        canvas_context.font = "30px arial";
+        canvas_context.fillText(selectedName, 100, 100);
+        
+    });
+
+</script>
+
+
+</html>
