@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="page-con">
+
+        <div class="content-con">
+
+            <div class="header-con">
+                <h1>Type into the input field to see your words per minute</h1>
+                <h2>Tap enter to end the test</h2>
+            </div>
+
+            <div class="test-con">
+                <form id="test-form">
+
+                    <input type="text" id="test-input" autocomplete="off" placeholder="Type here..." value=""
+                        onkeydown="calculateWPM()" />
+                    <p id="speed-result"></p>
+                    <p id="time-result"></p>
+                    <p id="input-count">0</p>
+                </form>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+</body>
+<script>
+    let input_field = document.getElementById("test-input");
+    let time_count = 0
+
+    function calculateWPM() {
+        //get the p tags
+        let speed_result = document.getElementById("speed-result");
+        let time_result = document.getElementById("time-result");
+        let input_count = document.getElementById("input-count");
+
+        //place event listener on the input field to listen for the enter key and character keys being pressed
+
+
+        //take the input field and add eventlistner for any inputs
+
+        input_field.addEventListener("keydown", function (event) {
+
+            let word_count = input_field.value.length;
+
+            console.log("you pressed " + event.key)
+
+            console.log("word count is " + word_count)
+            word_count = input_field.value.length;
+            input_count.innerHTML = word_count;
+
+
+            //end the test if the user presses "enter"
+            if (event.key === "enter") {
+                let time_taken = time_count;
+                console.log("you pressed " + event.key)
+
+            }
+
+
+
+        })
+
+
+
+
+
+    }
+
+
+
+
+
+</script>
+
+</html>
